@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://gwlfkrhf4576"]
+
+[ext_resource type="Script" path="res://Scripts/shop.gd" id="1_ws35f"]
+[ext_resource type="PackedScene" uid="uid://in1l2i8fx5kw" path="res://scenes/exit.tscn" id="2_3cbum"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ws35f")
+booty = 41
+
+[node name="Exit" parent="." instance=ExtResource("2_3cbum")]
+layout_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 88.0
+offset_right = 416.0
+offset_bottom = 640.0
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 120
+columns = 3
+
+[node name="Booty" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 480.0
+offset_bottom = 32.0
+text = "Booty: "
+horizontal_alignment = 2

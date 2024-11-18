@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnmlj4gcwmxcv"]
+
+[ext_resource type="Script" path="res://Scripts/shop_item.gd" id="1_iehhj"]
+
+[node name="Cosmetic" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -368.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopItem" type="Button" parent="."]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 112.0
+text = "Test 1"
+autowrap_mode = 1
+clip_text = true
+script = ExtResource("1_iehhj")
+
+[node name="price" type="Label" parent="ShopItem"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 112.0
+offset_bottom = 111.0
+text = "Price: 0"
+
+[connection signal="button_down" from="ShopItem" to="ShopItem" method="_on_shop_item_button_down"]

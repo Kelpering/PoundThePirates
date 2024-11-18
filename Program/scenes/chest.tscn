@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b64wts270hb4w"]
+
+[ext_resource type="Script" path="res://Scripts/chest.gd" id="1_oveax"]
+[ext_resource type="Texture2D" uid="uid://3kpu5g3xh2pu" path="res://art/Closed_Chest_blue.png" id="2_ugqhi"]
+[ext_resource type="Texture2D" uid="uid://criblq6wv25q2" path="res://art/Open_Chest_blue.png" id="3_a8j57"]
+[ext_resource type="Texture2D" uid="uid://bn61avvy5ncc6" path="res://art/Closed_Chest.png" id="4_8ohkb"]
+[ext_resource type="Texture2D" uid="uid://damttx6a3iggo" path="res://art/Open_Chest.png" id="5_fh3mu"]
+[ext_resource type="Texture2D" uid="uid://s1723yh40h0r" path="res://art/Pirate.png" id="6_oieva"]
+[ext_resource type="AudioStream" uid="uid://crantp87l2u18" path="res://art/gameover.wav" id="7_fd10h"]
+[ext_resource type="Texture2D" uid="uid://bgiydo1a8wg20" path="res://art/Hammer.png" id="7_hgemj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5gxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ugqhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a8j57")
+}],
+"loop": true,
+"name": &"chest_blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8ohkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fh3mu")
+}],
+"loop": true,
+"name": &"chest_default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3f2v"]
+size = Vector2(72, 89)
+
+[node name="Chest" type="Node2D"]
+
+[node name="Chest" type="Area2D" parent="."]
+script = ExtResource("1_oveax")
+
+[node name="Chest" type="AnimatedSprite2D" parent="Chest"]
+position = Vector2(8, 9.5)
+scale = Vector2(0.214925, 0.236074)
+sprite_frames = SubResource("SpriteFrames_c5gxr")
+animation = &"chest_blue"
+
+[node name="Head" type="Sprite2D" parent="Chest"]
+visible = false
+position = Vector2(8, 1)
+scale = Vector2(0.136, 0.138)
+texture = ExtResource("6_oieva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+position = Vector2(8, 9.5)
+shape = SubResource("RectangleShape2D_t3f2v")
+
+[node name="Hammer" type="Sprite2D" parent="Chest"]
+visible = false
+position = Vector2(48, -16)
+scale = Vector2(0.164, 0.164)
+texture = ExtResource("7_hgemj")
+
+[node name="Timer" type="Timer" parent="Chest"]
+wait_time = 1.005
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Chest"]
+stream = ExtResource("7_fd10h")
+
+[connection signal="timeout" from="Chest/Timer" to="Chest" method="_on_timer_timeout"]

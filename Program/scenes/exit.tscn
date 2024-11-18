@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://in1l2i8fx5kw"]
+
+[ext_resource type="Script" path="res://Scripts/exit.gd" id="1_gmcai"]
+
+[node name="Exit" type="Button"]
+offset_right = 64.0
+offset_bottom = 64.0
+text = "<"
+script = ExtResource("1_gmcai")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

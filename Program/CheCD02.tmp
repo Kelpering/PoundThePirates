@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://b64wts270hb4w"]
+
+[ext_resource type="Script" path="res://chest.gd" id="1_mvh5c"]
+[ext_resource type="Texture2D" uid="uid://bn61avvy5ncc6" path="res://Closed_Chest.png" id="2_4yc3a"]
+[ext_resource type="Texture2D" uid="uid://damttx6a3iggo" path="res://Open_Chest.png" id="3_ot0s5"]
+[ext_resource type="Texture2D" uid="uid://bqrj1gg2ftbvk" path="res://art/playerGrey_up1.png" id="4_iju47"]
+[ext_resource type="Texture2D" uid="uid://cn2pl1a5onpl5" path="res://art/Hat.png" id="5_1abow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yknqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4yc3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ot0s5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3f2v"]
+size = Vector2(72, 89)
+
+[node name="Chest" type="Node2D"]
+
+[node name="Chest" type="Area2D" parent="."]
+script = ExtResource("1_mvh5c")
+
+[node name="Chest" type="AnimatedSprite2D" parent="Chest"]
+position = Vector2(8, 9.5)
+scale = Vector2(0.214925, 0.236074)
+sprite_frames = SubResource("SpriteFrames_yknqs")
+frame_progress = 0.281622
+
+[node name="Head" type="Sprite2D" parent="Chest"]
+position = Vector2(8.00001, 8)
+scale = Vector2(0.277778, 0.283333)
+texture = ExtResource("4_iju47")
+
+[node name="Hat" type="Sprite2D" parent="Chest"]
+position = Vector2(8, -11)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_1abow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+position = Vector2(8, 9.5)
+shape = SubResource("RectangleShape2D_t3f2v")
+
+[node name="Timer" type="Timer" parent="Chest"]
+wait_time = 1.005
+autostart = true
+
+[connection signal="timeout" from="Chest/Timer" to="Chest" method="_on_timer_timeout"]

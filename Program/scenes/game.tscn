@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://04fg6lkjh1pd"]
+
+[ext_resource type="Script" path="res://Scripts/gameboard.gd" id="1_3lvwi"]
+[ext_resource type="PackedScene" uid="uid://in1l2i8fx5kw" path="res://scenes/exit.tscn" id="1_75ri5"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Gameboard" type="Area2D" parent="."]
+use_parent_material = true
+script = ExtResource("1_3lvwi")
+
+[node name="Lives" type="RichTextLabel" parent="Gameboard"]
+auto_translate_mode = 1
+offset_left = 384.0
+offset_top = 24.0
+offset_right = 480.0
+offset_bottom = 48.0
+text = "Lives: x"
+
+[node name="Score" type="RichTextLabel" parent="Gameboard"]
+auto_translate_mode = 1
+offset_left = 384.0
+offset_right = 480.0
+offset_bottom = 24.0
+text = "Score: x"
+
+[node name="Exit" parent="." instance=ExtResource("1_75ri5")]

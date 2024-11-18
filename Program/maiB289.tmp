@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://04fg6lkjh1pd"]
+
+[ext_resource type="Script" path="res://gameboard.gd" id="1_q6ld8"]
+[ext_resource type="Texture2D" uid="uid://dke4hmpo4gccn" path="res://art/enemyFlyingAlt_1.png" id="2_qdtcc"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Gameboard" type="Area2D" parent="."]
+use_parent_material = true
+script = ExtResource("1_q6ld8")
+score = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Gameboard"]
+position = Vector2(240, 360)
+scale = Vector2(4.40367, 4.73684)
+texture = ExtResource("2_qdtcc")
+
+[node name="Score" type="RichTextLabel" parent="Gameboard"]
+auto_translate_mode = 1
+offset_left = 301.0
+offset_right = 480.0
+offset_bottom = 39.0
+text = "Score: x"
