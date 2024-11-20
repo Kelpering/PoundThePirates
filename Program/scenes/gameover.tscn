@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccglkc5wuhfji"]
+
+[ext_resource type="Script" path="res://scenes/gameover.gd" id="1_4ma6e"]
+[ext_resource type="PackedScene" uid="uid://dwip567fh47gf" path="res://scenes/button.tscn" id="2_4nofp"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ma6e")
+
+[node name="Gameover" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 132.0
+offset_right = 322.0
+offset_bottom = 158.0
+text = "Game Over"
+
+[node name="Booty" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 172.0
+offset_right = 320.0
+offset_bottom = 198.0
+text = "Booty Earned: "
+
+[node name="Play" parent="." instance=ExtResource("2_4nofp")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 224.0
+offset_right = 320.0
+offset_bottom = 255.0
+text = "Try Again"
+button_path = "res://scenes/game.tscn"
+
+[node name="Menu" parent="." instance=ExtResource("2_4nofp")]
+offset_left = 128.0
+offset_top = 288.0
+offset_right = 320.0
+offset_bottom = 319.0
+text = "Main Menu"

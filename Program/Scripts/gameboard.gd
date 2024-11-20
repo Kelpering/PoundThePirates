@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	$Score.text = ("Score: " + str(score))
 	$Lives.text = ("Lives: " + str(lives))
 	
-	if score > score_change:
+	if score >= score_change:
 		level += 1
 		ungridify()
 		gridify(level)
@@ -82,6 +82,7 @@ func gameover():
 	json.parse(load_file())
 	json = json.data
 	json.booty = json.booty + int(score * level)
+	Global.temp = int(score * level)
 	
 	save_file(JSON.stringify(json))
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameover.tscn")

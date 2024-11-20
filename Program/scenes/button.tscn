@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwip567fh47gf"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="1_oy7xk"]
+
+[node name="Button" type="Button"]
+offset_right = 192.0
+offset_bottom = 31.0
+text = "Play"
+script = ExtResource("1_oy7xk")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
