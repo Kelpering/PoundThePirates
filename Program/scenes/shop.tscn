@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://gwlfkrhf4576"]
+[gd_scene load_steps=4 format=3 uid="uid://gwlfkrhf4576"]
 
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="1_ws35f"]
 [ext_resource type="PackedScene" uid="uid://in1l2i8fx5kw" path="res://scenes/exit.tscn" id="2_3cbum"]
+[ext_resource type="Texture2D" uid="uid://coict5d0p8aj0" path="res://art/bg.jpg" id="2_xb68q"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ws35f")
 booty = 41
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(240, 360)
+scale = Vector2(0.4, 0.597015)
+texture = ExtResource("2_xb68q")
 
 [node name="Exit" parent="." instance=ExtResource("2_3cbum")]
 layout_mode = 0

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://04fg6lkjh1pd"]
+[gd_scene load_steps=4 format=3 uid="uid://04fg6lkjh1pd"]
 
 [ext_resource type="Script" path="res://Scripts/gameboard.gd" id="1_3lvwi"]
 [ext_resource type="PackedScene" uid="uid://in1l2i8fx5kw" path="res://scenes/exit.tscn" id="1_75ri5"]
+[ext_resource type="Texture2D" uid="uid://coict5d0p8aj0" path="res://art/bg.jpg" id="3_gu0si"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(240, 360)
+scale = Vector2(0.4, 0.597015)
+texture = ExtResource("3_gu0si")
 
 [node name="Gameboard" type="Area2D" parent="."]
 use_parent_material = true
