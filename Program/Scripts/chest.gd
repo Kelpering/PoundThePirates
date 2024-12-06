@@ -20,8 +20,8 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event):
 	if clicked(event):
 		$Hammer.show()
-		$AudioStreamPlayer.play()
 		if state == 2:
+			$AudioStreamPlayer.play()
 			score_change.emit(1)
 		elif state == 3:
 			pass

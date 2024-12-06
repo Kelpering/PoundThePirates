@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bn61avvy5ncc6" path="res://art/Closed_Chest.png" id="4_8ohkb"]
 [ext_resource type="Texture2D" uid="uid://damttx6a3iggo" path="res://art/Open_Chest.png" id="5_fh3mu"]
 [ext_resource type="Texture2D" uid="uid://s1723yh40h0r" path="res://art/Pirate.png" id="6_oieva"]
-[ext_resource type="AudioStream" uid="uid://crantp87l2u18" path="res://art/gameover.wav" id="7_fd10h"]
 [ext_resource type="Texture2D" uid="uid://bgiydo1a8wg20" path="res://art/Hammer.png" id="7_hgemj"]
+[ext_resource type="AudioStream" uid="uid://dawssy5v48vm2" path="res://art/arr.mp3" id="8_q3ju7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c5gxr"]
 animations = [{
@@ -69,6 +69,6 @@ wait_time = 1.005
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Chest"]
-stream = ExtResource("7_fd10h")
+stream = ExtResource("8_q3ju7")
 
 [connection signal="timeout" from="Chest/Timer" to="Chest" method="_on_timer_timeout"]

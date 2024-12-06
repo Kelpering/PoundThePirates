@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cywnmbiyqyvuh"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_nol1i"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_nol1i"]
 [ext_resource type="PackedScene" uid="uid://dwip567fh47gf" path="res://scenes/button.tscn" id="2_8ex2v"]
 [ext_resource type="Texture2D" uid="uid://6r8kre5byyhm" path="res://art/start_screen.JPG" id="3_y3nsn"]
 
@@ -29,4 +29,22 @@ offset_top = 328.0
 offset_right = 200.0
 offset_bottom = 359.0
 text = "Cosmetic"
+button_path = "res://scenes/shop.tscn"
+
+[node name="Credits" parent="." instance=ExtResource("2_8ex2v")]
+offset_left = 8.0
+offset_top = 392.0
+offset_right = 200.0
+offset_bottom = 423.0
+text = "Credits
+"
+button_path = "res://scenes/credits.tscn"
+
+[node name="Credits" parent="Credits" instance=ExtResource("2_8ex2v")]
+offset_left = 8.0
+offset_top = 392.0
+offset_right = 200.0
+offset_bottom = 423.0
+text = "Credits
+"
 button_path = "res://scenes/shop.tscn"
