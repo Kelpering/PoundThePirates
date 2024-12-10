@@ -18,11 +18,13 @@ scale = Vector2(0.4, 0.597015)
 texture = ExtResource("2_m1mcv")
 
 [node name="Gameover2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 152.0
 offset_right = 352.0
 offset_bottom = 600.0
-text = "Provided Concept - Jon Howell
+text = "Lead Programmer - T.M.
+Provided Concept - Jon Howell
 Provided Backgrounds - Eric Perez"
 
 [node name="Gameover" type="RichTextLabel" parent="."]
