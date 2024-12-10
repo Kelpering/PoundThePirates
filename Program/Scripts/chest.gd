@@ -53,9 +53,21 @@ func _on_timer_timeout():
 				$Chest.set_frame_and_progress(1,0)
 				if randi_range(0,pirate_chance) == 0:
 					state = 2
-					$Head.show()
+					$Head.texture = load("res://art/pirate1.png")
 				else:
 					state = 1
+					var rand = randi_range(0,7)
+					if (rand == 1):
+						$Head.texture = load("res://art/star.png")
+					elif (rand == 2):
+						$Head.texture = load("res://art/shell.png")
+					elif (rand == 3):
+						$Head.texture = load("res://art/parrot.png")
+					else:
+						$Head.hide()
+						return
+				$Head.show()
+				
 		1:	#Open and no pirate
 			$Chest.set_frame_and_progress(0,0)
 			$Head.hide()
